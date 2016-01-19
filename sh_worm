@@ -1,0 +1,10 @@
+#!/bin/bash
+while true;do
+		nohup ./ContinuousDataChecker.py &
+		pid1=`echo $!`
+		nohup ./HinetContDownload.py & 
+		pid2=`echo $!`
+		sleep 30m
+		kill $pid1
+		kill $pid2
+done
